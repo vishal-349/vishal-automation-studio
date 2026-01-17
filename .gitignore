@@ -4,3 +4,4 @@ dist
 build
 cypress/videos
 cypress/screenshots
+mkdir frontend backend cypress
