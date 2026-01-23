@@ -10,21 +10,35 @@ function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-4xl mx-auto bg-white p-6 rounded shadow">
-        <h1 className="text-2xl font-bold mb-4">
-          Welcome to Dashboard 🎉
-        </h1>
+      <div className="max-w-5xl mx-auto bg-white p-6 rounded shadow">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold text-blue-600">
+            Vishal Automation Studio
+          </h1>
 
-        <p className="mb-6 text-gray-600">
-          You are successfully logged in.
+          <button
+            onClick={handleLogout}
+            className="text-sm text-red-600 hover:underline"
+          >
+            Logout
+          </button>
+        </div>
+
+        <p className="text-gray-700 mb-4">
+          🎉 You are logged in successfully.
         </p>
 
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-        >
-          Logout
-        </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 bg-blue-50 rounded">
+            🔐 Auth Flow Complete
+          </div>
+          <div className="p-4 bg-green-50 rounded">
+            🧪 Ready for Automation
+          </div>
+          <div className="p-4 bg-purple-50 rounded">
+            🚀 SaaS Project in Progress
+          </div>
+        </div>
       </div>
     </div>
   );
