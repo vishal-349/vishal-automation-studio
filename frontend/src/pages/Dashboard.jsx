@@ -114,12 +114,27 @@ const Dashboard = () => {
     { title: "Dropdowns (All Types)",
   icon: "dropdown",
   path: "/playground/dropdowns" },
+
+    { title: "Buttons & Click Actions",
+    icon: "button",
+    path: "/playground/buttons"
+  },
+    { title: "Dynamic Content & Loaders",
+  icon: "dynamic",
+  path: "/playground/dynamic-content" },
+
+    { title: "Alerts & Modals",
+  icon: "alert",
+  path: "/playground/alerts-modals" },
+
+    { title: "Iframes",
+  icon: "iframe",
+  path: "/playground/iframes" },
+
+    { title: "Multi-Window / Tabs",
+  icon: "window",
+  path: "/playground/multi-window" },
   
-    { title: "Buttons & Click Actions", icon: "button" },
-    { title: "Dynamic Content & Loaders", icon: "dynamic" },
-    { title: "Alerts & Modals", icon: "alert" },
-    { title: "Iframes", icon: "iframe" },
-    { title: "Multi-Window / Tabs", icon: "window" },
     { title: "Hidden Elements", icon: "hidden" },
     { title: "File Upload & Download", icon: "file" },
     { title: "Tables & Data", icon: "table" },

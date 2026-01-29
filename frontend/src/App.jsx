@@ -8,6 +8,15 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import FormElements from "./pages/playground/FormElements";
 import CheckboxRadio from "./pages/playground/CheckboxRadio";
 import Dropdowns from "./pages/playground/Dropdowns";
+import Buttons from "./pages/playground/Buttons";
+import DynamicContent from "./pages/playground/DynamicContent";
+import AlertsModals from "./pages/playground/AlertsModals";
+import Iframes from "./pages/playground/Iframes";
+import MultiWindowTabs from "./pages/playground/MultiWindowTabs";
+
+
+
+
 
 function App() {
   return (
@@ -57,6 +66,51 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+<Route
+  path="/playground/buttons"
+  element={
+    <ProtectedRoute>
+      <Buttons />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/playground/dynamic-content"
+  element={
+    <ProtectedRoute>
+      <DynamicContent />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/playground/alerts-modals"
+  element={
+    <ProtectedRoute>
+      <AlertsModals />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/playground/iframes"
+  element={
+    <ProtectedRoute>
+      <Iframes />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/playground/multi-window"
+  element={
+    <ProtectedRoute>
+      <MultiWindowTabs />
+    </ProtectedRoute>
+  }
+/>
 
 
 
