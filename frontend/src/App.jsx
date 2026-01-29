@@ -1,10 +1,17 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// Auth pages
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Dashboard from "./pages/Dashboard";
-import ProtectedRoute from "./routes/ProtectedRoute";
 
-// 🔥 NEW IMPORT
+// Dashboard
+import Dashboard from "./pages/Dashboard";
+
+// Route guards
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+
+// Playground pages
 import FormElements from "./pages/playground/FormElements";
 import CheckboxRadio from "./pages/playground/CheckboxRadio";
 import Dropdowns from "./pages/playground/Dropdowns";
@@ -14,22 +21,33 @@ import AlertsModals from "./pages/playground/AlertsModals";
 import Iframes from "./pages/playground/Iframes";
 import MultiWindowTabs from "./pages/playground/MultiWindowTabs";
 
-
-
-
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default */}
-        <Route path="/" element={<Navigate to="/login" />} />
+        {/* Root */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
 
-        {/* Public */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* ================= PUBLIC ROUTES ================= */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
 
-        {/* Protected */}
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute>
+              <Signup />
+            </PublicRoute>
+          }
+        />
+
+        {/* ================= PROTECTED ROUTES ================= */}
         <Route
           path="/dashboard"
           element={
@@ -39,7 +57,7 @@ function App() {
           }
         />
 
-        {/* FORM ELEMENTS  */}
+        {/* Playground */}
         <Route
           path="/playground/forms"
           element={
@@ -48,7 +66,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-{/* Checkbox-radio*/}
+
         <Route
           path="/playground/checkbox-radio"
           element={
@@ -57,8 +75,8 @@ function App() {
             </ProtectedRoute>
           }
         />
-{/* dropdowns */}
- <Route
+
+        <Route
           path="/playground/dropdowns"
           element={
             <ProtectedRoute>
@@ -67,53 +85,53 @@ function App() {
           }
         />
 
-<Route
-  path="/playground/buttons"
-  element={
-    <ProtectedRoute>
-      <Buttons />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/playground/buttons"
+          element={
+            <ProtectedRoute>
+              <Buttons />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/playground/dynamic-content"
-  element={
-    <ProtectedRoute>
-      <DynamicContent />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/playground/dynamic-content"
+          element={
+            <ProtectedRoute>
+              <DynamicContent />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/playground/alerts-modals"
-  element={
-    <ProtectedRoute>
-      <AlertsModals />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/playground/alerts-modals"
+          element={
+            <ProtectedRoute>
+              <AlertsModals />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/playground/iframes"
-  element={
-    <ProtectedRoute>
-      <Iframes />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/playground/iframes"
+          element={
+            <ProtectedRoute>
+              <Iframes />
+            </ProtectedRoute>
+          }
+        />
 
-<Route
-  path="/playground/multi-window"
-  element={
-    <ProtectedRoute>
-      <MultiWindowTabs />
-    </ProtectedRoute>
-  }
-/>
+        <Route
+          path="/playground/multi-window"
+          element={
+            <ProtectedRoute>
+              <MultiWindowTabs />
+            </ProtectedRoute>
+          }
+        />
 
-
-
+        {/* ================= CATCH ALL ================= */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
