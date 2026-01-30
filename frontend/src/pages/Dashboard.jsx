@@ -134,9 +134,16 @@ const Dashboard = () => {
     { title: "Multi-Window / Tabs",
   icon: "window",
   path: "/playground/multi-window" },
-  
-    { title: "Hidden Elements", icon: "hidden" },
-    { title: "File Upload & Download", icon: "file" },
+
+    {
+  title: "Hidden Elements",
+  icon: "eye-off",
+  path: "/playground/hidden-elements"},
+
+    { title: "File / Folder Upload & Download",
+  icon: "folder",
+  path: "/playground/file-managers"},
+
     { title: "Tables & Data", icon: "table" },
     { title: "Hover & Tooltips", icon: "hover" },
     { title: "Scrolling & Viewport", icon: "scroll" },

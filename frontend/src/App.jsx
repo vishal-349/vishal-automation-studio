@@ -21,6 +21,9 @@ import DynamicContent from "./pages/playground/DynamicContent";
 import AlertsModals from "./pages/playground/AlertsModals";
 import Iframes from "./pages/playground/Iframes";
 import MultiWindowTabs from "./pages/playground/MultiWindowTabs";
+import HiddenElements from "./pages/playground/HiddenElements";
+import FileManagers from "./pages/playground/FileManagers";
+import FileManagerDetails from "./pages/playground/FileManagerDetails";
 
 function App() {
   return (
@@ -130,6 +133,38 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+<Route
+  path="/playground/hidden-elements"
+  element={
+    <ProtectedRoute>
+      <HiddenElements />
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/playground/file-managers"
+  element={
+    <ProtectedRoute>
+      <FileManagers />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/playground/file-managers/:id"
+  element={
+    <ProtectedRoute>
+      <FileManagerDetails />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+
 
         {/* ================= CATCH ALL ================= */}
         <Route path="*" element={<Navigate to="/login" replace />} />

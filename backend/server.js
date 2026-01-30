@@ -15,6 +15,10 @@ const connectDB = require('./config/db');
  ****************************************************/
 const app = express();
 
+// Temporary log environment variables for verification
+console.log("AWS BUCKET ", process.env.AWS_BUCKET_NAME);
+console.log("AWS REGION ", process.env.AWS_REGION);
+
 /****************************************************
  * 4️⃣ GLOBAL MIDDLEWARES
  * - cors: allow cross-origin requests
