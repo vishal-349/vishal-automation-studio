@@ -45,6 +45,14 @@ const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
 
+app.get('/env-test', (req, res) => {
+  res.json({
+    bucket: process.env.AWS_BUCKET_NAME,
+    region: process.env.AWS_REGION,
+  });
+});
+
+
 /****************************************************
  * 8️⃣ START SERVER
  ****************************************************/
